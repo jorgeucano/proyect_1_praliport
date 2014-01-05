@@ -1,0 +1,128 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+html{
+	background: url(http://praliport.com/website/imagenes/FONDO.jpg);
+	color: #FFFFFF;
+	font-family: Helvetica;
+}
+
+h1{
+	margin-left: 15%;
+}
+
+hr {
+	background: #FF9900;
+	margin-left: 15%;
+	width: 70%;
+	color: #FF9900;
+	background-color: #FF9900;
+	height: 2px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+nav ul li{
+	width: 70%;
+	background: #000000;
+	margin-left: 15%;
+	text-align: right;
+	padding: 5px;
+	list-style-type: none;
+	font-size: 10pt;
+	text-align: right;
+	cursor: pointer;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	letter-spacing: 2px;
+}
+
+li:hover.li_menu {
+	background: #333333;
+	color: #FFFF09;
+}
+.header_button{
+	margin-left: 70%;
+}
+
+#contenedor{
+	border-radius: 0.5em;
+	display: inline-block;
+	margin: 1em;
+	max-width: 100%;
+	padding: 0.25em;
+	vertical-align: top;
+	width: 100%;
+	min-width: 215px;
+}
+
+
+#contenedor_multimedios{
+	border-radius: 0.5em;
+	display: inline-block;
+	margin: 1em;
+	max-width: 60%;
+	padding: 0.25em;
+	vertical-align: top;
+	width: 60%;
+	min-width: 215px;
+	margin-left: 20%;
+}
+
+#video{
+	width: 274px;
+	min-width: 215px;
+	height: 166px;
+	margin-left: 20px;
+}
+
+#contenedor_left{
+	margin-left: 14%;
+	width: 20%;
+	float: left;
+	min-width: 235px;
+}
+
+#contenedor_derecha{
+	float:left;
+	width: 50%;
+	font-family: Helvetica;
+	font-size: 9pt;
+	color: #FFF;
+	line-height: 20px;
+	text-align: justify;
+	letter-spacing: 1px;
+}
+
+
+#contenedor_left img{
+	border: 2px solid #FFFFFF;
+}
+
+@media all and (max-width: 1200px) {
+	#contenedor_left{
+		margin-left: 0%;
+		width: 20%;
+		float: left;
+	}
+	#contenedor_derecha{
+		margin-left: 5px;
+		width: 70%;
+	}
+}
+
+@media all and (max-width: 500px){
+	h1{
+		margin-left: 0px;
+	}
+	h1 img{
+		width: 100%;
+	}
+	#video{
+		width: 100%;
+		height: 166px;
+		margin-left: 0px;
+	}
+}
