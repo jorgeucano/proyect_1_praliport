@@ -21,9 +21,9 @@
 <table>
 	<tr>
 		<td> Multimedios </td>
-		<td> galeria </td>
-		<td> texto </td>
-		<td> videos </td>
+		<td><a href="multimedios/galeria.php"> galeria</a> </td>
+		<td><a href="multimedios/texto.php"> texto </a></td>
+		<td><a href="multimedios/video.php"> videos </a></td>
 	</tr>
 </table>
 <table>

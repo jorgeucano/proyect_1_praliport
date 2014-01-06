@@ -38,6 +38,7 @@
 					<div id="wowslider-container1">
 					<div class="ws_images"><ul>
 	                    <?php
+	                    		include ('conn/conection.php');
 									$sql ="select * from multimedios_galeria where habilitado = true order by id";
 									$result = mysql_query($sql);
 									$i = 0;
@@ -55,18 +56,26 @@
 		</section>
 		<section id="contenedor_multimedios">
 			<p>
-				En esta parte podras encontrar partes del proceso del producto que distribuimos y fabricamos.
+				<?php
+					$sql ="select * from multimedios_texto order by id  limit 1";
+					$result = mysql_query($sql);
+					while ($row = mysql_fetch_array($result)){
+						echo $row['texto'];
+					}
+				?>
 			</p>
 			<br />
-			<picture id="video">
-				<img src="http://praliport.com/website/imagenes/arbole.jpg" title="arboles" />
-			</picture>
-			<picture id="video">
-				<img src="http://praliport.com/website/imagenes/arbole.jpg" title="arboles" />
-			</picture>
-			<picture id="video">
-				<img src="http://praliport.com/website/imagenes/arbole.jpg" title="arboles" />
-			</picture>
+			<?php
+					$sql ="select * from multimedios_video where habilitado = true order by id  limit 3";
+					$result = mysql_query($sql);
+					while ($row = mysql_fetch_array($result)){
+			?>
+					<picture id="video">
+						<a href="<?php echo $row['link']; ?>" target=_black ><img style="width:242px; height:222px;" src="images/video.jpg" title="arboles" /></a>
+					</picture>
+			<?
+					}
+				?>
 		</section>
 	</body>
 </html>
