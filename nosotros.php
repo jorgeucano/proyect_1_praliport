@@ -1,12 +1,20 @@
-<?
+<?php
 	include ('conn/conection.php');
-	$sql ="select * from home order by id desc limit 1";
+	$sql = "select * from nosotros where id = 1";
 	$result = mysql_query($sql);
 	while ($row = mysql_fetch_array($result)){
-		$texto = $row['texto'];
-		$imagen = $row['imagen'];
+		$quienes_titulo = $row['titulo'];
+		$quienes_texto  = $row['texto'];
 	}
+	$sql = "select * from nosotros where id = 2";
+	$result = mysql_query($sql);
+	while ($row = mysql_fetch_array($result)){
+		$venimos_titulo = $row['titulo'];
+		$venimos_texto = $row['texto'];
+	}
+
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 	<head>
@@ -41,41 +49,41 @@
 			</nav>
 		</header>
 		<hr>
-		<section>
-			<article>
-				<!-- Start WOWSlider.com BODY section id=wowslider-container1 -->
-					<div id="wowslider-container1">
+		<section id="contenedor">
+			<section id="contenedor_left_nosotros">
+				    <div id="wowslider-container1">
 						<div class="ws_images">
 							<ul>
 								<?php
-									$sql ="select * from home_galeria where habilitado = true order by id";
-									$result = mysql_query($sql);
-									$i = 0;
-									while ($row = mysql_fetch_array($result)){
-										echo '<li><img src="'.$row['url'].'" alt="" title="" id="wows1_'.$i.'"/></li>';
-										$i++;
-									}
+										$sql ="select * from nosotros_galeria where habilitado = true order by id";
+										$result = mysql_query($sql);
+										$i = 0;
+										while ($row = mysql_fetch_array($result)){
+											echo '<li><img src="'.$row['url'].'" alt="" title="" id="wows1_'.$i.'"/></li>';
+											$i++;
+										}
 								?>
 							</ul>
 						</div>
-						<a class="wsl" href="http://wowslider.com">HTML5 Image Rotator by WOWSlider.com v3.4</a>
 						<a href="#" class="ws_frame"></a>
 						<div class="ws_shadow"></div>
 					</div>
 					<script type="text/javascript" src="../engine1/wowslider.js"></script>
 					<script type="text/javascript" src="../engine1/script.js"></script>
-				<!-- End WOWSlider.com BODY section -->
-			</article>
-		</section>
-		<section id="contenedor">
-			<section id="contenedor_left">
-				<picture>
-					<img src="<? echo $imagen; ?>" width="238px" height="218px" title="arboles" />
-				</picture>
 			</section>
-			<section id="contenedor_derecha">
+			<section id="contenedor_derecha_nosotros">
 				<section>
-					<? echo $texto; ?>
+					<p style="color:#FFCC00;"><? echo $quienes_titulo; ?></p>
+					<br />
+					<p>
+					<?php echo $quienes_texto; ?>
+					</p>
+					<br /><br />
+					<p style="color:#FFCC00;"><? echo $venimos_titulo; ?></p>
+					<br />
+					<p>
+					<? echo $venimos_texto; ?>
+					</p>
 				</section>
 			</section>
 		</section>

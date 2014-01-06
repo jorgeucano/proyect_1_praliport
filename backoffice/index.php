@@ -29,21 +29,15 @@
 <table>
 	<tr>
 		<td> Nosotros </td>
-		<td> Quienes somos </td>
-		<td> donde venimos </td>
-		<td> Galeria </td>
+		<td><a href="nosotros/quienes.php"> Quienes somos </a></td>
+		<td><a href="nosotros/donde.php">  donde venimos </a> </td>
+		<td><a href="nosotros/galeria.php"> Galeria  </a></td>
 	</tr>
 </table>
 <table>
 	<tr>
-		<td> Productos </td>
-		<td> Texto Principal </td>
-		<td> productos </td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td> Contacto </td>
-		<td> texto </td>
+		<td>Productos </td>
+		<td><a href="productos/texto.php"> Texto Principal </a></td>
+		<td><a href="productos/productos.php"> productos </a></td>
 	</tr>
 </table>
