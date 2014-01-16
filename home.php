@@ -13,6 +13,17 @@
 
 ?>
 
+<?
+	include ('conn/conection.php');
+	$sql ="select * from home order by id desc limit 1";
+	$result = mysql_query($sql);
+	while ($row = mysql_fetch_array($result)){
+		$texto = $row['texto'];
+		$imagen = $row['imagen'];
+		$ingles = $row['ingles'];
+		$griego = $row['griego'];
+	}
+?>
 <!DOCTYPE html>
 <html lang="es">
 	<head>
@@ -74,99 +85,56 @@
 			</nav>
 		</header>
 		<hr>
-		<?php
-			include ('conn/conection.php');
-			$sql = "select * from producto";
-			$result = mysql_query($sql);
-			while ($row = mysql_fetch_array($result)){
-				$titulo = $row['titulo'];
-				$texto = $row['texto'];
-				$titulo_ingles = $row['titulo_ingles'];
-				$texto_ingles  = $row['ingles'];
-				$titulo_griego = $row['titulo_griego'];
-				$texto_griego  = $row['griego'];
-			}
-		?>
 		<section>
-			<article id="producto" >
-				<p>
-					<? 
-						if ($idioma == "e"){
-							echo $titulo;
-						}
-						else if ($idioma == "i"){
-							echo $titulo_ingles;
-						}
-						else{
-							echo $titulo_griego;
-						}
- 					?>
-
-
-				</p>
-				<br />
-				<p>
-					<? 
+			<article>
+				<!-- Start WOWSlider.com BODY section id=wowslider-container1 -->
+					<div id="wowslider-container1">
+						<div class="ws_images">
+							<ul>
+								<?php
+									$sql ="select * from home_galeria where habilitado = true order by id";
+									$result = mysql_query($sql);
+									$i = 0;
+									while ($row = mysql_fetch_array($result)){
+										echo '<li><img src="'.$row['url'].'" alt="" title="" id="wows1_'.$i.'"/></li>';
+										$i++;
+									}
+								?>
+							</ul>
+						</div>
+						<a class="wsl" href="http://wowslider.com">HTML5 Image Rotator by WOWSlider.com v3.4</a>
+						<a href="#" class="ws_frame"></a>
+						<div class="ws_shadow"></div>
+					</div>
+					<script type="text/javascript" src="engine1/wowslider.js"></script>
+					<script type="text/javascript" src="engine1/script.js"></script>
+				<!-- End WOWSlider.com BODY section -->
+			</article>
+		</section>
+		<section id="contenedor">
+			<section id="contenedor_left">
+				<picture>
+					<img src="<? echo $imagen; ?>" width="238px" height="218px" title="arboles" />
+				</picture>
+			</section>
+			<section id="contenedor_derecha">
+				<section>
+					<?
 						if ($idioma == "e"){
 							echo $texto;
 						}
 						else if ($idioma == "i"){
-							echo $texto_ingles;
+							echo $ingles;
 						}
 						else{
-							echo $texto_griego;
+							echo $griego;
 						}
- 					?>
 
-				</p>
-			</article>
-		</section>
-
-		<?
-			$sql ="select * from productos where habilitado = true";
-			$result = mysql_query($sql);
-			while ($row = mysql_fetch_array($result)){
-		?>
-		<section id="contenedor">
-			<p id="producto_titulo">
-				<? 
-					if ($idioma == "e"){
-						echo $row['titulo'];
-					}
-					else if ($idioma == "i"){
-						echo $row['titulo_ingles'];
-					}
-					else{
-						echo $row['titulo_griego'];
-					}
-				?>
-			</p>
-			<hr style="margin-left: 14%;">
-			<section id="productos_contenedor_left">
-				<section >
-					<? 
-						if ($idioma == "e"){
-							echo $row['texto'];
-						}
-						else if ($idioma == "i"){
-							echo $row['texto_ingles'];
-						}
-						else{
-							echo $row['texto_griego'];
-						}
- 					?>
+					?>
 				</section>
 			</section>
-			<section id="productos_contenedor_derecha">
-				<picture>
-					<img src="<? echo $row['url']; ?>" />
-				</picture>
-			</section>
 		</section>
-		<?
-			}
-		?>
-		<?php
+				<?php
 			include ('footer.html');
 		?>
 	</body>

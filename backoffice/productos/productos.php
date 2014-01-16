@@ -11,9 +11,18 @@ textarea { width: 500px; height: 300px;}
 <body onload="cargarTinyMCE();">
 <h1>Nuevo Producto</h1>
 	<form action="productos_pr.php" method="post"  enctype="multipart/form-data">
+		<h3>Espa&ntilde;ol</h3>
 		Titulo: <input type="text" name="titulo"  style="width: 300px;" />
 		<br />
 		Texto: <textarea name="texto"></textarea>
+		<h3>Ingles</h3>
+		Titulo: <input type="text" name="titulo_ingles"  style="width: 300px;" />
+		<br />
+		Texto: <textarea name="ingles"></textarea>
+		<h3>Griego</h3>
+		Titulo: <input type="text" name="titulo_griego"  style="width: 300px;" />
+		<br />
+		Texto: <textarea name="griego"></textarea>
 		<dl>
 		<dt><label>Archivos Nueva Imagen:</label></dt>
 	        <!-- Esta div contendrá todos los campos file que creemos -->

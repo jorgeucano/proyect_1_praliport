@@ -4,6 +4,8 @@
 	$result = mysql_query($sql);
 	while ($row = mysql_fetch_array($result)){
 		$texto = $row['texto'];
+		$ingles = $row['ingles'];
+		$griego = $row['griego'];
 	}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -19,7 +21,18 @@ textarea { width: 500px; height: 300px;}
 <body onload="cargarTinyMCE();">
 <h1>editor</h1>
 	<form method="post" action="texto_pr.php">
+		Espa&ntilde;ol:
+		<br />
 		<textarea name="texto"><?php echo $texto; ?></textarea>
+		<br />
+		Ingles:
+		<br />
+		<textarea name="ingles"><?php echo $ingles; ?></textarea>
+		<br />
+		Griego:
+		<br />
+		<textarea name="griego"><?php echo $griego; ?></textarea>
+		<br />
 		<input type="submit" name="submit" value="Modificar" />
 	</form>
 </body>

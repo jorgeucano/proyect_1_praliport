@@ -1,0 +1,33 @@
+<div id="ytplayer"></div>
+<div id="1"></div>
+<div id="2"></div>
+
+<script>
+  // Load the IFrame Player API code asynchronously.
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/player_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  // Replace the 'ytplayer' element with an <iframe> and
+  // YouTube player after the API code downloads.
+  var player;
+  function onYouTubePlayerAPIReady() {
+    player = new YT.Player('ytplayer', {
+      height: '25%',
+      width: '25%',
+      videoId: 'M7lc1UVf-VE'
+    });
+  }
+</script>
+
+
+ <iframe width="242" height="150" src="http://www.youtube.com/embed/M7lc1UVf-VE"> </iframe>
+
+
+<style>
+  *{
+    padding: 0;
+    margin: 0;
+  }
+</style>
